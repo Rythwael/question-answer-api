@@ -1,0 +1,14 @@
+{
+  "name": "question-answer-api",
+  "version": "1.0.0",
+  "description": "Question-answer api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Oğuzhan Akça",
+  "license": "MIT"
+}
