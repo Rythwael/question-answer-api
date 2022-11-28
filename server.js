@@ -1,20 +1,20 @@
 const dotenv = require("dotenv");
 const express = require("express");
-const auth = require("./routers/auth");
-const question = require("./routers/question");
+const connectDatabase = require("./helpers/database/connectDatabase")
+const routers = require("./routers/router");
 
 
 //Environment Variables
-
 dotenv.config({
     path: "./config/env/config.env"
 });
+//MongoDB Connection
+connectDatabase();
 const app = express();
 const PORT = process.env.PORT;
 
 //Routers Middleware
-app.use("/api/auth", auth);
-app.use("/api/questions", question);
+app.use("/api", routers);
 
 
 app.get("/", (req, res) => {

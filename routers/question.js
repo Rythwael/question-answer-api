@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-router.get("/", (req, res) => {
-    res.send("Question HomePage")
-});
-router.get("/register", (req, res) => {
-    res.send("Auto Register")
+const { getAllQuestions } = require("../controllers/questionController");
+
+router.get("/", getAllQuestions);
+router.get("/delete", (req, res) => {
+    res.send("Question Delete Page")
 });
 module.exports = router;
